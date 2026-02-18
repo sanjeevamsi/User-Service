@@ -1,14 +1,11 @@
 package com.example.User.controller;
 
 import com.example.User.dto.UserDTO;
-import com.example.User.model.User;
 import com.example.User.service.JwtService;
 import com.example.User.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,13 +27,5 @@ public class AuthController {
         userDto.setPassword(encoder.encode(userDto.getPassword()));
         userService.saveUser(userDto);
         return ResponseEntity.ok("User registered successfully!");
-    }
-
-    //login
-
-
-    @GetMapping("/test")
-    public String test() {
-        return "User Service is up and running!";
     }
 }

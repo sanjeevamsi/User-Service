@@ -13,10 +13,11 @@ public class UserPrincipal implements UserDetails {
 
     @Autowired
     private User user;
-    //create a constructor that takes the user object
+
     public UserPrincipal (User user) {
         this.user = user;
     }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singleton(new SimpleGrantedAuthority("USER"));
@@ -32,3 +33,4 @@ public class UserPrincipal implements UserDetails {
         return user.getUsername();
     }
 }
+

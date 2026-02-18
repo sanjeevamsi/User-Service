@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-
     @Autowired
     private UserRepo userRepo;
 
@@ -20,7 +19,6 @@ public class UserService {
         user.setPassword(userDto.getPassword());
         user.setEmail(userDto.getEmail());
         user.setRole(userDto.getRole());
-        //the created and updated fields will be automatically set by the database, so we don't need to set them here
         userRepo.save(user);
     }
 }
