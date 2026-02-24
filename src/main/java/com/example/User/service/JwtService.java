@@ -50,7 +50,6 @@ public class JwtService {
                 .getBody();
     }
 
-
     public boolean validateToken(String token, UserDetails userDetails) {
         String username = extractUsername(token);
         return (username.equals(userDetails.getUsername()));

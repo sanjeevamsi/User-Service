@@ -38,8 +38,8 @@ public class SecurityConfig {
         http
                 .csrf(customizer -> customizer.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/user-service/signUp").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/user-service/login").permitAll()
+                        .requestMatchers("/signUp").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/login").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
