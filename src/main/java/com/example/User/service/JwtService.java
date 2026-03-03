@@ -16,8 +16,10 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    public String generateToken(String username) {
+    public String generateToken(String username, Long userId) {
         HashMap<String, Object> claims = new HashMap<>();
+
+        claims.put("userId", userId);
 
         return Jwts.builder()
                 .setClaims(claims)

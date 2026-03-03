@@ -38,6 +38,8 @@ public class AuthService {
             throw new RuntimeException("Invalid credentials");
         }
         String username = authentication.getName();
-        return jwtService.generateToken(username);
+        User user = userRepo.findByUsername(username);
+        Long userId = user.getId();
+        return jwtService.generateToken(username, userId);
     }
 }
