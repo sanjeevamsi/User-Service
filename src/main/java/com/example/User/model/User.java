@@ -1,5 +1,6 @@
 package com.example.User.model;
 
+import com.example.User.enums.Role;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -15,7 +16,8 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
     private LocalDate created_at;
     private LocalDate updated_at;
 
