@@ -17,7 +17,6 @@ public class BudgetService {
     @Autowired
     private BudgetRepo budgetRepo;
 
-
     public void addMonthlyBudget(String userId, BudgetDTO dto, int month, int year) {
         long userIdFromGateway = Long.parseLong(userId);
         Optional<Budget> existing = budgetRepo.findByUserIdAndMonthAndYear(userIdFromGateway, month, year);

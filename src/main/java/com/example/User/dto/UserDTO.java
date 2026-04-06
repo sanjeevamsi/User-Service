@@ -1,5 +1,6 @@
 package com.example.User.dto;
 
+import com.example.User.enums.Role;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -13,5 +14,5 @@ public class UserDTO {
     private String username;
     private String password;
     private String email;
-    private String role;
+    private Role role;
 }
