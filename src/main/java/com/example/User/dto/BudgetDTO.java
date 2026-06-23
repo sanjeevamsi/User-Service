@@ -1,18 +1,17 @@
 package com.example.User.dto;
 
-import com.example.User.enums.Role;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+import java.math.BigDecimal;
+import java.time.YearMonth;
+
 @Data
-public class UserDTO {
+public class BudgetDTO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
-    private String password;
-    private String email;
-    private Role role;
+    private BigDecimal monthlyLimit;
 }

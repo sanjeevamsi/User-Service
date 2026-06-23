@@ -16,8 +16,10 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    public String generateToken(String username) {
+    public String generateToken(String username, Long userId) {
         HashMap<String, Object> claims = new HashMap<>();
+
+        claims.put("userId", userId);
 
         return Jwts.builder()
                 .setClaims(claims)
@@ -49,7 +51,6 @@ public class JwtService {
                 .parseClaimsJws(token)
                 .getBody();
     }
-
 
     public boolean validateToken(String token, UserDetails userDetails) {
         String username = extractUsername(token);
